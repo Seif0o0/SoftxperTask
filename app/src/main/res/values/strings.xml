@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MovieApp</string>
+    <string name="all_genres_option">All</string>
+    <string name="search_hint">Search …</string>
+    <string name="empty_movies_list_text">No movies found</string>
+    <string name="server_error_message">Oops something went wrong, We\'re looking to see what happened.</string>
+    <string name="retry">Retry</string>
+    <string name="tap_to_retry">Tap to Retry</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="error_401_message">Unauthorized: Access is denied due to invalid credentials.</string>
+    <string name="error_404_message">404</string>
+    <string name="something_went_wrong_try_again_later">Something went wrong, try again later</string>
+</resources>

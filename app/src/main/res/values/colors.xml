@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_primary">#20509A</color>
+    <color name="color_primary_variant">#FF3700B3</color>
+    <color name="color_on_primary">#FFFFFF</color>
+    <color name="color_secondary">#FFBB86FC</color>
+    <color name="color_secondary_variant">#FF018786</color>
+    <color name="color_on_secondary">#000000</color>
+    <color name="status_bar_color">#20509A</color>
+
+    <color name="main_background_color">#FFFFFF</color>
+    <color name="retry_text_color">#747474</color>
+    <color name="main_buttons_background_color">#20509A</color>
+    <color name="un_clicked_buttons_background_color">#747474</color>
+    <color name="titles_text_color">#000000</color>
+    <color name="dates_text_color">#747474</color>
+    <color name="white_with_30_opacity">#CCFFFFFF</color>
+    <color name="empty_list_text_color">#747474</color>
+    <color name="error_message_color">#FF0000</color>
+    <color name="description_text_color">#5A5A5A</color>
+</resources>

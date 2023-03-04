@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="genre"
+            type="softxpert.movie.app.domain.model.Genre" />
+
+        <variable
+            name="clickListener"
+            type="softxpert.movie.app.presentation.utils.ListItemClickListener&lt;softxpert.movie.app.domain.model.Genre>" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{()-> clickListener.onItemClickListener(genre)}"
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="@dimen/_6sdp"
+        app:is_clicked="@{genre.clicked}"
+        tools:cardBackgroundColor="@color/main_buttons_background_color">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/tajwal_medium"
+            android:text="@{genre.name}"
+            android:textSize="@dimen/_11ssp"
+            app:is_clicked="@{genre.clicked}"
+            tools:text="Science fiction"
+            tools:textColor="@color/main_background_color" />
+    </com.google.android.material.card.MaterialCardView>
+</layout>
