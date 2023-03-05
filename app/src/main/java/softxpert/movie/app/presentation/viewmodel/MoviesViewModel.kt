@@ -9,6 +9,7 @@ import androidx.paging.LoadState
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -25,22 +26,11 @@ class MoviesViewModel @Inject constructor(
 
     val filterFlow = MutableStateFlow<String?>(null)
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     var movies: Flow<PagingData<Movie>> = filterFlow.flatMapLatest { genreId ->
         repo.fetchMovies(genreId = genreId).cachedIn(viewModelScope)
     }
-//    var movies: Flow<PagingData<Movie>> = combine(filterFlow) { genre, query ->
-//        var finalGenreId: String? = if (genre == null)
-//            null
-//        else {
-//            if (genre == "0")
-//                null
-//            else
-//                genre
-//        }
-//        Pair(finalGenreId, query)
-//    }.flatMapLatest { (genre, query) ->
-//        repo.fetchMovies(genre, query).cachedIn(viewModelScope)
-//    }
+
 
 
     private val _moviesLoadingState = MutableStateFlow(false)

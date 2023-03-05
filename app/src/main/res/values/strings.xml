@@ -10,4 +10,5 @@
     <string name="error_401_message">Unauthorized: Access is denied due to invalid credentials.</string>
     <string name="error_404_message">404</string>
     <string name="something_went_wrong_try_again_later">Something went wrong, try again later</string>
+    <string name="cast">Cast</string>
 </resources>

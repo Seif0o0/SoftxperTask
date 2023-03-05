@@ -19,5 +19,9 @@
     <fragment
         android:id="@+id/movieDetailsFragment"
         android:name="softxpert.movie.app.presentation.fragment.MovieDetailsFragment"
-        android:label="MovieDetailsFragment" />
+        android:label="MovieDetailsFragment" >
+        <argument
+            android:name="movieId"
+            app:argType="integer" />
+    </fragment>
 </navigation>

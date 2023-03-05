@@ -8,37 +8,31 @@
         <import type="softxpert.movie.app.utils.Constants" />
 
         <variable
-            name="movie"
-            type="softxpert.movie.app.domain.model.Movie" />
-
-        <variable
-            name="clickListener"
-            type="softxpert.movie.app.presentation.utils.ListItemClickListener&lt;softxpert.movie.app.domain.model.Movie>" />
+            name="cast"
+            type="softxpert.movie.app.domain.model.Cast" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="@{()-> clickListener.onItemClickListener(movie)}"
-        app:cardBackgroundColor="@color/main_background_color"
-        app:cardCornerRadius="@dimen/_4sdp"
+        app:cardCornerRadius="@dimen/_5sdp"
         app:cardUseCompatPadding="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/poster"
-                android:layout_width="@dimen/_95sdp"
-                android:layout_height="@dimen/_95sdp"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
                 android:scaleType="fitXY"
                 app:image_size="@{Constants.POSTER_w154}"
-                app:image_url="@{movie.poster}"
+                app:image_url="@{cast.photo}"
                 app:layout_constraintEnd_toEndOf="@id/end_guideline"
                 app:layout_constraintStart_toStartOf="@id/start_guideline"
                 app:layout_constraintTop_toTopOf="@id/top_guideline"
-                app:riv_corner_radius="@dimen/_50sdp"
+                app:riv_corner_radius="@dimen/_5sdp"
                 tools:src="@drawable/ic_launcher_background" />
 
             <TextView
@@ -51,14 +45,14 @@
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:maxLines="1"
-                android:text="@{movie.title}"
+                android:text="@{cast.name}"
                 android:textColor="@color/titles_text_color"
-                android:textSize="@dimen/_14ssp"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constrainedWidth="true"
                 app:layout_constraintEnd_toEndOf="@id/end_guideline"
                 app:layout_constraintStart_toStartOf="@id/start_guideline"
                 app:layout_constraintTop_toBottomOf="@id/poster"
-                tools:text="Movie name adas ad ad" />
+                tools:text="aaa" />
 
             <TextView
                 android:id="@+id/release_date"
@@ -69,14 +63,14 @@
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:maxLines="1"
-                android:text="@{movie.releaseDate}"
+                android:text="@{cast.character}"
                 android:textColor="@color/dates_text_color"
-                android:textSize="@dimen/_11ssp"
+                android:textSize="@dimen/_10ssp"
                 app:layout_constraintBottom_toBottomOf="@id/bottom_guideline"
                 app:layout_constraintEnd_toEndOf="@id/end_guideline"
                 app:layout_constraintStart_toStartOf="@id/start_guideline"
                 app:layout_constraintTop_toBottomOf="@id/title"
-                tools:text="22/12/2022" />
+                tools:text="xxx" />
 
 
             <androidx.constraintlayout.widget.Guideline
@@ -84,28 +78,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_begin="@dimen/_6sdp" />
+                app:layout_constraintGuide_begin="@dimen/_4sdp" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/start_guideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_begin="@dimen/_6sdp" />
+                app:layout_constraintGuide_begin="@dimen/_4sdp" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/bottom_guideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_end="@dimen/_6sdp" />
+                app:layout_constraintGuide_end="@dimen/_4sdp" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/end_guideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_end="@dimen/_6sdp" />
+                app:layout_constraintGuide_end="@dimen/_4sdp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 </layout>

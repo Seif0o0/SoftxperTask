@@ -4,6 +4,7 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.Group
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import com.airbnb.lottie.LottieAnimationView
@@ -14,12 +15,14 @@ import com.google.android.material.textview.MaterialTextView
 import com.makeramen.roundedimageview.RoundedImageView
 import softxpert.movie.app.R
 
-@BindingAdapter("img_url", "image_size")
+@BindingAdapter("image_url", "image_size")
 fun RoundedImageView.loadImage(url: String?, size: String) {
     Glide.with(context).load("${Constants.IMAGES_BASE_URL}$size$url")
         .placeholder(R.drawable.ic_launcher_background).error(R.drawable.ic_launcher_foreground)
         .into(this)
 }
+
+
 
 @BindingAdapter("is_clicked")
 fun MaterialCardView.isGenreClicked(isClicked: Boolean) {
@@ -82,4 +85,15 @@ fun LottieAnimationView.setErrorStatus(isError: Boolean, errorMessage: String) {
     } else {
         cancelAnimation()
     }
+}
+
+@BindingAdapter("rate_visibility")
+fun Group.setGroupVisibility(rate: Float) {
+    visibility = if (rate > 0) View.VISIBLE else View.GONE
+}
+
+@BindingAdapter("release_date")
+fun MaterialTextView.setReleaseYear(date:String?){
+    date?.let { text = "(${it.split("-")[0]})" }
+
 }

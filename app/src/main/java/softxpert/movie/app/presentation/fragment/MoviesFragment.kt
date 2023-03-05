@@ -9,9 +9,11 @@ import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
+import softxpert.movie.app.R
 import softxpert.movie.app.databinding.FragmentMoviesBinding
 import softxpert.movie.app.presentation.adapter.ListLoadStateAdapter
 import softxpert.movie.app.presentation.adapter.MoviesAdapter
@@ -47,7 +49,14 @@ class MoviesFragment : Fragment() {
         }
         binding.lifecycleOwner = viewLifecycleOwner
 
-        moviesAdapter.setOnClickListener(ListItemClickListener { })
+        moviesAdapter.setOnClickListener(ListItemClickListener {
+            if (findNavController().currentDestination?.id == R.id.moviesFragment)
+                findNavController().navigate(
+                    MoviesContainerFragmentDirections.actionMoviesFragmentToMovieDetailsFragment(
+                        it.id
+                    )
+                )
+        })
         moviesAdapter.addLoadStateListener { combinedLoadStates ->
             viewModel.handleLoadStateListener(combinedLoadStates, moviesAdapter.itemCount)
         }
@@ -64,7 +73,7 @@ class MoviesFragment : Fragment() {
                 ).maximumWindowMetrics
             )
             layoutManager = AutoFitGridLayoutManager(requireContext(), screenSize.first)
-//                GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
+
             adapter = moviesAdapter.withLoadStateFooter(
                 footer = loadStateAdapter
             )

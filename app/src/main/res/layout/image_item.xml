@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="width"
+            type="String" />
+
+        <variable
+            name="image"
+            type="softxpert.movie.app.domain.model.Image" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@dimen/_8sdp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            app:image_size="@{width}"
+            app:image_url="@{image.url}"
+            app:riv_corner_radius="@dimen/_8sdp"
+            tools:src="@drawable/ic_launcher_background" />
+    </com.google.android.material.card.MaterialCardView>
+</layout>
