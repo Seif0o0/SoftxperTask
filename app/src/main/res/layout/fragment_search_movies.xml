@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="softxpert.movie.app.presentation.viewmodel.MoviesContainerViewModel" />
+            type="softxpert.movie.app.presentation.viewmodel.SearchMoviesViewModel" />
 
         <variable
             name="retryListener"
@@ -50,48 +50,52 @@
             app:tint="@color/color_primary" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/genres"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_4sdp"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintEnd_toEndOf="@id/end_guideline"
-            app:layout_constraintStart_toStartOf="@id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@id/search_layout"
-            tools:listitem="@layout/genre_item" />
-
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/view_pager"
+            android:id="@+id/movies"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_6sdp"
             app:layout_constraintBottom_toBottomOf="@id/bottom_guideline"
             app:layout_constraintEnd_toEndOf="@id/end_guideline"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@id/genres" />
+            app:layout_constraintTop_toBottomOf="@id/search_layout"
+            tools:itemCount="20" />
+
+        <TextView
+            android:id="@+id/empty_list_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/tajwal_medium"
+            android:text="@string/empty_movies_list_text"
+            android:textColor="@color/empty_list_text_color"
+            android:textSize="@dimen/_10ssp"
+            android:visibility="@{viewModel.emptyState}"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_guideline"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/search_layout" />
 
         <include
             layout="@layout/error_view"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_6sdp"
             app:errorMessage="@{viewModel.errorState}"
             app:layout_constraintBottom_toBottomOf="@id/bottom_guideline"
             app:layout_constraintEnd_toEndOf="@id/end_guideline"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@id/genres"
+            app:layout_constraintTop_toBottomOf="@id/search_layout"
             app:retryListener="@{retryListener}" />
 
         <include
             layout="@layout/loading_view"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_6sdp"
             app:layout_constraintBottom_toBottomOf="@id/bottom_guideline"
             app:layout_constraintEnd_toEndOf="@id/end_guideline"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@id/genres"
+            app:layout_constraintTop_toBottomOf="@id/search_layout"
             app:loadingStatus="@{viewModel.loadingState}" />
 
         <androidx.constraintlayout.widget.Guideline

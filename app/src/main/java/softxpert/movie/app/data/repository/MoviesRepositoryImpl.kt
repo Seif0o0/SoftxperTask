@@ -43,9 +43,8 @@ class MoviesRepositoryImpl @Inject constructor(
     @Inject
     lateinit var pagingResource: MoviesPagingSource
     override fun fetchMovies(genreId: String?): Flow<PagingData<Movie>> {
-
         genreId?.let {
-            pagingResource.setGenreId(genreId)
+            pagingResource.setGenreId(it)
         }
         return Pager(PagingConfig(pageSize = Constants.PAGE_SIZE)) {
             pagingResource

@@ -40,6 +40,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:navigationIcon="@drawable/ic_back_icon"
+            app:titleTextColor="@color/main_background_color"
             app:title="@{movieDetails.title}" />
 
         <androidx.viewpager2.widget.ViewPager2

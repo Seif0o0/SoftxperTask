@@ -19,4 +19,5 @@
     <color name="error_message_color">#FF0000</color>
     <color name="description_text_color">#5A5A5A</color>
     <color name="orange">#FFA500</color>
+    <color name="hint_text_color">#93A2AA</color>
 </resources>

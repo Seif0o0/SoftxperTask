@@ -10,6 +10,7 @@ object Constants {
 
     const val GENRES = "genre/movie/list"
     const val MOVIES = "discover/movie"
+    const val SEARCH = "search/movie"
     const val MOVIE_ROOT = "movie/"
     const val IMAGES = "/images"
     const val CAST = "/credits"
@@ -19,6 +20,7 @@ object Constants {
     const val API_KEY_ = "api_key"
     const val PAGE_KEY = "page"
     const val GENRE_KEY = "with_genres"
+    const val QUERY_KEY = "query"
     const val CONNECTION_ERROR_KEY = "connectionError"
     const val MOVIE_ID_KEY = "movie_id"
 

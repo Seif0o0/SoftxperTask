@@ -18,6 +18,12 @@ interface MoviesService {
         @Query(Constants.API_KEY_) apiKey: String = Constants.API_KEY
     ): Response<GenresResponse>
 
+    @GET(Constants.SEARCH)
+    suspend fun searchMovies(
+        @QueryMap map: Map<String, String>
+    ): Response<MoviesResponse>
+
+
     @GET(Constants.MOVIES)
     suspend fun fetchMovies(
         @QueryMap map: Map<String, String>
